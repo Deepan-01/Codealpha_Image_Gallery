@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive photography gallery with category filters and a lightbox.">
+  <title>Visual Gallery — Explore the World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Visual Gallery home">
+        <span class="brand-mark">V</span>
+        <span>visual<span class="brand-light">gallery</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#gallery-section" class="nav-link active">Explore</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch theme">
+        <span class="theme-icon" aria-hidden="true">☾</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> A LITTLE INSPIRATION, EVERY DAY</p>
+          <h1>See the world<br><em>through a new lens.</em></h1>
+          <p class="hero-description">A curated collection of moments, places and details worth pausing for.</p>
+          <a class="hero-cta" href="#gallery-section">Explore the gallery <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-image-wrap">
+          <img class="hero-image" src="https://picsum.photos/id/1018/1000/800" alt="Mountain landscape beneath a dramatic sky">
+          <div class="image-note"><span class="note-dot"></span> MOMENTS IN FOCUS <span>01 / 05</span></div>
+        </div>
+        <div class="hero-index" aria-hidden="true">01—05</div>
+      </section>
+
+      <section class="gallery-section" id="gallery-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THE COLLECTION</p>
+            <h2>Find your <em>perspective.</em></h2>
+          </div>
+          <p class="section-count"><span id="image-count">12</span> photographs</p>
+        </div>
+
+        <div class="gallery-toolbar">
+          <div class="filters" role="group" aria-label="Filter gallery by category">
+            <button class="filter-btn active" data-category="all" type="button" aria-pressed="true">All work</button>
+            <button class="filter-btn" data-category="nature" type="button" aria-pressed="false">Nature</button>
+            <button class="filter-btn" data-category="city" type="button" aria-pressed="false">City</button>
+            <button class="filter-btn" data-category="animals" type="button" aria-pressed="false">Animals</button>
+            <button class="filter-btn" data-category="architecture" type="button" aria-pressed="false">Architecture</button>
+          </div>
+          <span class="toolbar-hint">SELECT A PHOTO TO EXPLORE <span aria-hidden="true">↗</span></span>
+        </div>
+
+        <div class="gallery-grid" id="gallery" aria-live="polite"></div>
+        <p class="empty-state" id="empty-state" hidden>No photographs in this category yet.</p>
+      </section>
+
+      <section class="about-section" id="about">
+        <p class="eyebrow">BEHIND THE FRAME</p>
+        <div class="about-content">
+          <h2>Every image tells<br><em>a different story.</em></h2>
+          <p>Visual Gallery is a small space to celebrate photography. Browse the collection, discover a new favourite, and take a closer look at the details.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="#"><span class="brand-mark">V</span><span>visual<span class="brand-light">gallery</span></span></a>
+      <p>Made for curious eyes. © <span id="year"></span></p>
+      <a href="#gallery-section" class="back-top">BACK TO TOP ↑</a>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close image viewer">×</button>
+    <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">‹</button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-image" src="" alt="">
+      <figcaption>
+        <span id="lightbox-title"></span>
+        <span id="lightbox-position"></span>
+      </figcaption>
+    </figure>
+    <button class="lightbox-arrow lightbox-next" id="lightbox-next" type="button" aria-label="Next image">›</button>
+    <p class="lightbox-help">USE ← → TO NAVIGATE <span>·</span> ESC TO CLOSE</p>
+  </div>
+</body>
+</html>
